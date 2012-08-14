@@ -9,6 +9,11 @@ module AndroidServices
   class << self
     attr_writer :configuration
     
+    # @example
+    # AndroidServices.configure do |config|
+    #   config.api_key = '1232fsd23asd'
+    #   config.secure = true
+    # end
     def configure
       yield(configuration)
     end
