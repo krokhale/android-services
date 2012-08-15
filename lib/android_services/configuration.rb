@@ -3,6 +3,8 @@ module AndroidServices
     OPTIONS = [:api_key, :messaging_endpoint, :secure, :port, :protocol].freeze
     attr_accessor :api_key
     
+    attr_accessor :messaging_endpoint
+    
     attr_accessor :secure
     
     attr_accessor :port

@@ -19,8 +19,8 @@ module AndroidServices
         def send!
           build_request
           post_request!
-          handle_response
         end
+        
 
         private
 
@@ -30,17 +30,26 @@ module AndroidServices
         end
         
         def build_request
-          instance_variable_set("@#{request}", AndroidServices::GoogleCloudMessaging::Request.create(instance_variables))
+          instance_variable_set("@request", AndroidServices::GoogleCloudMessaging::Request.new(self))
+          self.class.instance_eval do
+            define_method(:request) { @request }
+          end
         end
         
         def post_request!
-          response_object = @request.post!
-          instance_variable_set("@#{response}", response_object)
+          response_object = @request.send :post!
+          instance_variable_set("@response", response_object)
+          self.class.instance_eval do
+            define_method(:response) { @request }
+          end
+          @response
         end  
         
-        def handle_response
-          
-        end
+        # def method_missing(method_id, *args)
+          # self.class.instance_eval do
+            # define_method(method_id) {eval("@#{method_id}") if %w(request response).include?(method_id)}
+          # end
+        # end
 
       end
     end

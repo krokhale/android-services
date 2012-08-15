@@ -1,6 +1,11 @@
 $:.unshift(File.dirname(__FILE__))
 
+require 'net/http'
+
 require 'android_services/cloud_message/cloud_message'
+require 'android_services/cloud_message/request'
+require 'android_services/cloud_message/response'
+
 require 'android_services/configuration'
 require 'android_services/exceptions'
 
