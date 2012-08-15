@@ -1,7 +1,8 @@
 $:.unshift(File.dirname(__FILE__))
 
-# require 'services/messaging'
+require 'android_services/cloud_message/cloud_message'
 require 'android_services/configuration'
+require 'android_services/exceptions'
 
 
 module AndroidServices

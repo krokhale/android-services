@@ -11,7 +11,8 @@ module AndroidServices
     
     def initialize
       @secure = true
-      @messaging_endpoint = "https://android.googleapis.com/gcm/send"
+      @messaging_endpoint = "#{protocol}://android.googleapis.com/gcm/send"
+      @content_type = 'application/json'
     end
     
     def port
