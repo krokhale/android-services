@@ -30,10 +30,15 @@ module AndroidServices
         end
         
         def build_request
-          instance_variable_set("@request", AndroidServices::GoogleCloudMessaging::Request.new(self))
+          instance_variable_set("@request", AndroidServices::GoogleCloudMessaging::Request.new(payload))
           self.class.instance_eval do
             define_method(:request) { @request }
           end
+        end
+        
+        def payload
+          params = instance_variables_hash.select {|k,v| ["registration_ids", "dry_run", "collapse_key", "data", "delay_while_idle", "time_to_live"].include?(k) && !v.nil?}
+          params.to_json
         end
         
         def post_request!
