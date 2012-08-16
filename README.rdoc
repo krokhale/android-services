@@ -7,15 +7,16 @@
 	http://developer.android.com/guide/google/gcm/gs.html
 	
 	After getting the API key, you can initialize it in the rails app using an initializer file.
-	
-	 AndroidServices.configure do |config|
-   		config.api_key = '<API KEY>'
-   		config.secure = true
- 	 end	
+
+AndroidServices.configure do |config|
+	config.api_key = '<API KEY>'
+   	config.secure = true
+end	
 	
 ==== Sending a simple message
 	Sending a message to an Android device is easy! The simplest message you can send is:
-		CloudMessage.new(:registration_ids => [])
+
+CloudMessage.new(:registration_ids => [])
 	
 	Other Options you might want to use:
 	
