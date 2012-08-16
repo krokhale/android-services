@@ -45,11 +45,9 @@ module AndroidServices
           @response
         end  
         
-        # def method_missing(method_id, *args)
-          # self.class.instance_eval do
-            # define_method(method_id) {eval("@#{method_id}") if %w(request response).include?(method_id)}
-          # end
-        # end
+        def instance_variables_hash
+          Hash[instance_variables.map { |name| [name.to_s.gsub("@",""), instance_variable_get(name)] } ]
+        end
 
       end
     end

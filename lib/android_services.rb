@@ -1,6 +1,7 @@
 $:.unshift(File.dirname(__FILE__))
 
 require 'net/http'
+require 'json'
 
 require 'android_services/cloud_message/cloud_message'
 require 'android_services/cloud_message/request'
