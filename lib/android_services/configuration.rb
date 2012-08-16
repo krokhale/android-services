@@ -9,6 +9,8 @@ module AndroidServices
     
     attr_accessor :port
     
+    attr_accessor :content_type
+    
     alias_method :secure?, :secure
     
     def initialize

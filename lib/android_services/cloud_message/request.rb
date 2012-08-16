@@ -13,11 +13,7 @@ module AndroidServices
       end
       
       def handle response
-        puts response.body
-        instance_variable_set("@response", response)
-        self.class.instance_eval do
-          define_method(:response) { @response }
-        end
+        AndroidServices::GoogleCloudMessaging::Response.new(response)
       end
       
       def uri
@@ -25,15 +21,13 @@ module AndroidServices
       end
       
       def post_to uri
-          puts uri
-          puts @payload
-          Net::HTTP.start(uri.hostname, uri.port, :use_ssl => uri.scheme == 'https') do |http|
+        Net::HTTP.start(uri.hostname, uri.port, :use_ssl => uri.scheme == 'https') do |http|
             req = Net::HTTP::Post.new(uri.path)
             req.body =  @payload
-            req['Content-Type'] = 'application/json'
-            req["Authorization"] = 'key=AIzaSyBf7qptM9GaM4rAL-oH2vgM82liIZzFvmM' 
+            req['Content-Type'] = AndroidServices.configuration.content_type
+            req["Authorization"] = "key=#{AndroidServices.configuration.api_key}"
             http.request(req)
-          end
+        end
       end
       
     end
