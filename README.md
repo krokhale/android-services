@@ -12,7 +12,7 @@ After getting the API key, you can initialize it in the rails app using an initi
 
     AndroidServices.configure do |config|
 	     config.api_key = '<API KEY>'
-   	  config.secure = true
+   	  	 config.secure = true
     end	
 	
 ### Sending a simple message
