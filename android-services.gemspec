@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
+    "android-services.gemspec",
     "android_services-0.1.0.gem",
     "android_services.gemspec",
     "lib/android_services.rb",
