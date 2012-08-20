@@ -4,7 +4,7 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = "android-services"
+  s.name = "android_services"
   s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
-    "android-services.gemspec",
+    "android_services.gemspec",
     "lib/android_services.rb",
     "lib/android_services/cloud_message/cloud_message.rb",
     "lib/android_services/cloud_message/request.rb",
