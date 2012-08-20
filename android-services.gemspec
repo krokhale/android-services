@@ -9,21 +9,22 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["krishna rokhale"]
-  s.date = "2012-08-16"
+  s.date = "2012-08-20"
   s.description = "The gem aims to provide an API for google services including google play which interact with Android devices."
   s.email = "krishna.rokhale@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
-    "README.rdoc"
+    "README.md"
   ]
   s.files = [
     ".document",
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
-    "README.rdoc",
+    "README.md",
     "Rakefile",
     "VERSION",
+    "android-services.gemspec",
     "lib/android_services.rb",
     "lib/android_services/cloud_message/cloud_message.rb",
     "lib/android_services/cloud_message/request.rb",
